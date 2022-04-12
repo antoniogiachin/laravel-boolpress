@@ -121,3 +121,11 @@ La relazione è di uno (categoies) a molti (posts). La tabella dipendente è dun
 - Creo un nuovo Main.vue dentro componente che mi mostrerà dinamicamente la rotta selezionata tramite <router-view>, App mostra main che mostra dinamicamente le rotte
 - Creo gli altri componenti header e footer con router-link e :to="{name: 'nomerotta'}" posso dire di dirigersi dove ho impostato in routes.js
 - Creo about, contatti e pagina per visualizzare i posts e importo e definisco in router.js
+
+### visualizzazione singolo post
+- quando clicco su continua lettura devo mostrare il risultato di una hciamata api al singolo post -> di conseguenza devo impostare in Api/PostController una show del singolo post e passarlo come json al front. Il post viene richiamato in base allo slug
+- vado in api.php e PostController di api
+- creo la pagina per visualizzare il post specifico
+- Se a questo punto vado in pagina valida e apro ispettore con addon vue, vedo che sotto le $route ho il params slug disponibile, provo a stamparlo per prova. Lo vedo perché quando ho definito la rotta ho messo :slug, ossia quella parte della rotta la salvi in una sorta di variabile dal nome slug
+- il link "continua lettura mi rimanda a :to = "{ name: 'single-post', params: {slug: post.slug}}"
+- a questo punto dentro lo specifico post nel link post/:slug io ho lo slug salvato come dicevo grazie a :slug, posso fare chiamata api e stampare.

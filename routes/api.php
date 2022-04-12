@@ -20,3 +20,6 @@ use Illuminate\Support\Facades\Route;
 
 // api verra chiamata alla rotta /api/posts -> stessa rotta che do ad axios
 Route::get('/posts', 'Api\PostController@index');
+
+//alla chiamata di post/{slug} dinamico viene richiamata la rotta
+Route::get('/posts/{slug}', 'Api\PostController@show');
