@@ -111,3 +111,13 @@ La relazione è di uno (categoies) a molti (posts). La tabella dipendente è dun
 - Cambia la rispota axios, non più response.data, ma controllo console.log(response) e adeguo di conseguenza
 - Inserisco i bottoni per cambio pagina -> al click richiama la funzione di getApi con una pagina minore o maggiore a seconda se clicco avanti o indietro
 - Con classe 'disable' in bootstrap si vieta al pulsante la interazione
+
+# Gestione rotte con Vue Router
+- installazione tramite npm *npm install vue-router@3*
+- creo dentro la cartella resources-js un file router.js in cui imposto le rotte per VueRouter
+- importo nel front.js il file router.js
+- creo dentro la cartella resources-js una cartella pages con tutte le pagine da mostrare in front tramite VueRouter
+- prima pages create home.vue -> la importo nel file routes.js e ne definisco la rotta
+- Creo un nuovo Main.vue dentro componente che mi mostrerà dinamicamente la rotta selezionata tramite <router-view>, App mostra main che mostra dinamicamente le rotte
+- Creo gli altri componenti header e footer con router-link e :to="{name: 'nomerotta'}" posso dire di dirigersi dove ho impostato in routes.js
+- Creo about, contatti e pagina per visualizzare i posts e importo e definisco in router.js

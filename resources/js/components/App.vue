@@ -1,16 +1,23 @@
 <template>
-  <div class="container mt-5 text-center">
-      <myMain/>
+  <div class="container mt-5">
+    <Header/>
+    <Main/>
+    <Footer/>
   </div>
 </template>
 
 <script>
-import myMain from './myMain';
-// importo component
+//importo componenti
+import Header from './Header.vue';
+import Main from './Main.vue'
+import Footer from './Footer.vue';
+
 export default {
     name: 'App',
     components : {
-      myMain,
+      Header,
+      Main,
+      Footer
     }
      
 }
