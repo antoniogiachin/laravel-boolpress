@@ -9,7 +9,7 @@
         </ul>
         <h2 class="my-2">Post collegati</h2>
         <div class="row row-cols-4">
-            <div class="col card ms_card" v-for="relatedPost in relatedPosts" :key="relatedPost.id">
+            <div class="col card ms_card" v-for="relatedPost in relatedPostsFiltered" :key="relatedPost.id">
                 <h3 class="card-title">{{relatedPost.title}}</h3>
                 <p> Anteprima: {{sliceContent(relatedPost.content, 10)}}</p>
                 <a class="btn btn-success" href="">Vai al post</a>
@@ -47,18 +47,13 @@ export default {
             axios.get('/api/posts/' + slug)
             .then((response) => {
                 // handle success
-                console.log(response);
                 this.post = response.data.result;
-            console.log(this.category_id);
                 this.category_id = response.data.result.category.id
-                console.log(this.category_id);
                 this.getCategory(this.category_id);
                 if(response.data.result.tags.length > 0){
                     this.tags = response.data.result.tags
-                    console.log(this.tags);
                 } else {
                     this.tags = this.tagPlaceholder
-                    console.log(this.tags);
                 }
             })
         },
@@ -66,9 +61,7 @@ export default {
         getCategory(id){
             axios.get('/api/category/' + id)
             .then((response) => {
-                console.log(response);
                 this.relatedPosts = response.data.result.post;
-                console.log(this.relatedPosts)
             })
         },
         // trim stringa
@@ -79,6 +72,13 @@ export default {
     created() {
         this.getSinglePost(this.$route.params.slug);
     },
+    computed:{
+        relatedPostsFiltered : function(){
+            return this.relatedPosts.filter(relatedPost =>{
+                return relatedPost.title != this.post.title
+            })
+        }
+    }
 
 
 }

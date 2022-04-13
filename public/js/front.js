@@ -2257,20 +2257,15 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('/api/posts/' + slug).then(function (response) {
         // handle success
-        console.log(response);
         _this.post = response.data.result;
-        console.log(_this.category_id);
         _this.category_id = response.data.result.category.id;
-        console.log(_this.category_id);
 
         _this.getCategory(_this.category_id);
 
         if (response.data.result.tags.length > 0) {
           _this.tags = response.data.result.tags;
-          console.log(_this.tags);
         } else {
           _this.tags = _this.tagPlaceholder;
-          console.log(_this.tags);
         }
       });
     },
@@ -2279,9 +2274,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios.get('/api/category/' + id).then(function (response) {
-        console.log(response);
         _this2.relatedPosts = response.data.result.post;
-        console.log(_this2.relatedPosts);
       });
     },
     // trim stringa
@@ -2291,6 +2284,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     this.getSinglePost(this.$route.params.slug);
+  },
+  computed: {
+    relatedPostsFiltered: function relatedPostsFiltered() {
+      var _this3 = this;
+
+      return this.relatedPosts.filter(function (relatedPost) {
+        return relatedPost.title != _this3.post.title;
+      });
+    }
   }
 });
 
@@ -3866,7 +3868,7 @@ var render = function () {
     _c(
       "div",
       { staticClass: "row row-cols-4" },
-      _vm._l(_vm.relatedPosts, function (relatedPost) {
+      _vm._l(_vm.relatedPostsFiltered, function (relatedPost) {
         return _c(
           "div",
           { key: relatedPost.id, staticClass: "col card ms_card" },

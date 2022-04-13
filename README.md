@@ -139,3 +139,4 @@ La relazione è di uno (categoies) a molti (posts). La tabella dipendente è dun
 
 ## Gestione categorie post consigliati
 - dentro singlePost bisogna lavorare
+- va gestito il post uguale, altrimenti tra i consigliati mi mostra il post visualizzato
