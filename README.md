@@ -136,3 +136,6 @@ La relazione è di uno (categoies) a molti (posts). La tabella dipendente è dun
 - Trasformo in un component la card con il post nel blog, passo con props post(dentro a blog.vue)
 - Nel component Post.vue rendo lo slice più elegante tramite funzione
 - Nella chiamata Api gestisco anche la risposta con category e tags, stampo i tag nella pagina blog
+
+## Gestione categorie post consigliati
+- dentro singlePost bisogna lavorare

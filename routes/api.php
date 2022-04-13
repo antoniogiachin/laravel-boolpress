@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,6 @@ Route::get('/posts', 'Api\PostController@index');
 
 //alla chiamata di post/{slug} dinamico viene richiamata la rotta
 Route::get('/posts/{slug}', 'Api\PostController@show');
+
+//rotta per chiamata post legati a categoria
+Route::get('/category/{id}', 'Api\CategoryController@show');

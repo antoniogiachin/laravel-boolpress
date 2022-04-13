@@ -7,6 +7,14 @@
         <ul>
             <li v-if="post.category">{{post.category.name}}</li>
         </ul>
+        <h2 class="my-2">Post collegati</h2>
+        <div class="row row-cols-4">
+            <div class="col card ms_card" v-for="relatedPost in relatedPosts" :key="relatedPost.id">
+                <h3 class="card-title">{{relatedPost.title}}</h3>
+                <p> Anteprima: {{sliceContent(relatedPost.content, 10)}}</p>
+                <a class="btn btn-success" href="">Vai al post</a>
+            </div>
+        </div>
         <p>Tags</p>
         <ul>
             <li v-for="tag in tags" :key="tag.id">{{tag.name}}</li>
@@ -22,6 +30,8 @@ export default {
         return {
             // salvo post di risposta
             post: [],
+            category_id : null,
+            relatedPosts : [],
             tags: [],
             tagPlaceholder :
                 [
@@ -39,6 +49,10 @@ export default {
                 // handle success
                 console.log(response);
                 this.post = response.data.result;
+            console.log(this.category_id);
+                this.category_id = response.data.result.category.id
+                console.log(this.category_id);
+                this.getCategory(this.category_id);
                 if(response.data.result.tags.length > 0){
                     this.tags = response.data.result.tags
                     console.log(this.tags);
@@ -47,23 +61,35 @@ export default {
                     console.log(this.tags);
                 }
             })
+        },
+        // chiamata axios per post legati categoria, category.php come ocntroller  ha la funzione post(), quindi posso vedere tutti i post legati ad una categoria, la chimata sarà show sul categorycontroller in api php artisan make:controller Api/CategoryController, allo show passo id della cateogria
+        getCategory(id){
+            axios.get('/api/category/' + id)
+            .then((response) => {
+                console.log(response);
+                this.relatedPosts = response.data.result.post;
+                console.log(this.relatedPosts)
+            })
+        },
+        // trim stringa
+        sliceContent(text, param){
+            return text.slice(0,param) + "...";
         }
     },
     created() {
         this.getSinglePost(this.$route.params.slug);
     },
-    // computed:{
-    //     tags: function(){
-    //         if(this.posts.tags){
-    //             return this.post.tags;
-    //         } else {
-    //             return this.tagPlaceholder
-    //         }
-    //     }
-    // }
+
+
 }
 </script>
 
 <style>
+.ms_card{
+    margin-right: 5px;
+    margin-bottom: 5px;
+    height: 200px;
+    padding: 1rem;
 
+}
 </style>
