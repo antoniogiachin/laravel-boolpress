@@ -19,9 +19,12 @@ export default {
       Main,
       Footer
     }
-     
+
 }
 </script>
 
 <style>
+body{
+  background-color: cyan;
+}
 </style>

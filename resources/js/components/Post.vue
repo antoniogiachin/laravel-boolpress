@@ -5,7 +5,7 @@
             <p class="card-text">{{ sliceContent(post.content, 10) }}</p>
             <!-- mostro i tags -->
             <div class="d-flex mb-3">
-                <span v-for="tag in tags" :key="tag.id" class="badge rounded-pill bg-primary">{{tag.name}}</span>
+                <span v-for="tag in tags" :key="tag.id" class="badge rounded-pill bg-primary me-2">{{tag.name}}</span>
             </div>
             <router-link :to="{name: 'single-post', params: {slug: post.slug}}" class="btn btn-primary">Continua la lettura</router-link>
         </div>

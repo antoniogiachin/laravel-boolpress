@@ -1,8 +1,8 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white mb-3 border-3 rounded">
         <div class="container-fluid">
 
-            <router-link class="navbar-brand" :to="{name: 'home'}">BoolPress</router-link>
+            <span class="navbar-brand"><span class="text-uppercase">BoolPress</span></span>
 
             <div class="navbar-nav">
                 <router-link :to="{name: 'home'}" class="nav-link" href="#">Home</router-link>
@@ -23,5 +23,10 @@ export default {
 </script>
 
 <style>
-
+.router-link-exact-active{
+    color: black;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 20px;
+}
 </style>

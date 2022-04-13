@@ -10,6 +10,8 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog'
 // importo pagina singolo post
 import SinglePost from './pages/SinglePost'
+// importo pagina 404
+import NotFound from './pages/NotFound.vue'
 
 const routes = new VueRouter({
     //mode history per evitare obbligo di #
@@ -46,6 +48,12 @@ const routes = new VueRouter({
             path: '/blog/:slug',
             name: 'single-post',
             component: SinglePost,
+        },
+        //rotta catchall
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'not-found',
+            component: NotFound,
         }
 
     ]
