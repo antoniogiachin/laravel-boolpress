@@ -78,7 +78,7 @@ class PostController extends Controller
 
         //potrei togliere "=" e sarebbe comunque un operatore di uguaglianza
         while(Post::where('slug', '=',  $slug)->first()){
-            
+
             $slug = Str::slug($data['title']) . '-' . $counter;
             $counter++;
 
@@ -92,7 +92,9 @@ class PostController extends Controller
         // salvo
         $post->save();
 
-        $post->tags()->sync($data['tagsId']);
+        if (isset($data['tagsId'])) {
+            $post->tags()->sync($data['tagsId']);
+        }
 
 
         //decido il redirect
@@ -173,7 +175,9 @@ class PostController extends Controller
         $post->save();
 
         //sync-> richiamo public function post sync con id dei tag presenti con lo store dentro $data
-        $post->tags()->sync($data['tagsId']);
+        if(isset($data['tagsId'])){
+            $post->tags()->sync($data['tagsId']);
+        }
 
         return redirect()-> route('admin.posts.show', $post->id);
     }
