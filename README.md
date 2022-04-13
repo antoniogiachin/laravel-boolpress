@@ -92,7 +92,7 @@ La relazione è di uno (categoies) a molti (posts). La tabella dipendente è dun
 - gestisco show e index tag
 
 ## Carbon date
-- Home di admin inserisco i giorni rimanti per la fine del mese - vado su home controller 
+- Home di admin inserisco i giorni rimanti per la fine del mese - vado su home controller
 - Nelle show dei post inserisco la data di creazione del post
 
 # Gestione API
@@ -103,7 +103,7 @@ La relazione è di uno (categoies) a molti (posts). La tabella dipendente è dun
 
 # Passo a Vue
 - axios- require axios in front.js
-- creo component main per app.vue - qui farò chiamata axios 
+- creo component main per app.vue - qui farò chiamata axios
 - gestione chiamata axios per category_id -> non solo l'id ma tutto l'oggetto, in api Home controller modifiche
 - gestione visualizzazione massimo 4 per pagina ->paginate-> nella chiamata axios bisogna dirlgi quale è la pagina corrente
 - In vue imposto nei data la pagina corrente
@@ -129,3 +129,10 @@ La relazione è di uno (categoies) a molti (posts). La tabella dipendente è dun
 - Se a questo punto vado in pagina valida e apro ispettore con addon vue, vedo che sotto le $route ho il params slug disponibile, provo a stamparlo per prova. Lo vedo perché quando ho definito la rotta ho messo :slug, ossia quella parte della rotta la salvi in una sorta di variabile dal nome slug
 - il link "continua lettura mi rimanda a :to = "{ name: 'single-post', params: {slug: post.slug}}"
 - a questo punto dentro lo specifico post nel link post/:slug io ho lo slug salvato come dicevo grazie a :slug, posso fare chiamata api e stampare.
+
+# 13 Aprile
+## Refactoring :
+- Il comopnente posts diventa blog adatto di conseguenza le rotte,
+- Trasformo in un component la card con il post nel blog, passo con props post(dentro a blog.vue)
+- Nel component Post.vue rendo lo slice più elegante tramite funzione
+- Nella chiamata Api gestisco anche la risposta con category e tags, stampo i tag nella pagina blog

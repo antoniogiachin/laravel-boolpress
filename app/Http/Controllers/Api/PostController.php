@@ -19,8 +19,8 @@ class PostController extends Controller
         //con chiamata al db prelevo tutti i post
         // $posts = Post::all();
         // questo non stamperebbe le categorie, ma solamente l'id di categoty, per risolvere
-        $posts = Post::with(['category'])->paginate(4);
-        
+        $posts = Post::with(['category', 'tags'])->paginate(4);
+
 
         //ritorno un json
         return response()->json(
@@ -40,7 +40,7 @@ class PostController extends Controller
         if($post){
             return response()->json([
                 'result' => $post,
-                'success' => true, 
+                'success' => true,
             ]);
         } else {
             return response()->json([
@@ -50,5 +50,5 @@ class PostController extends Controller
         }
     }
 
-   
+
 }

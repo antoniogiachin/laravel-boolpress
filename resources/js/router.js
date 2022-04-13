@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Posts from './pages/Posts'
+import Blog from './pages/Blog'
 // importo pagina singolo post
 import SinglePost from './pages/SinglePost'
 
@@ -17,7 +17,7 @@ const routes = new VueRouter({
     //rotte
     routes: [
         {
-            // la rotta è un oggetto con 
+            // la rotta è un oggetto con
             // uri
             path: '/',
             // nome rotta
@@ -37,13 +37,13 @@ const routes = new VueRouter({
             component: Contact,
         },
         {
-            path : '/posts',
-            name: 'posts',
-            component: Posts,
+            path : '/blog',
+            name: 'blog',
+            component: Blog,
         },
         //path per singolo post con slug dinamico
         {
-            path: '/posts/:slug',
+            path: '/blog/:slug',
             name: 'single-post',
             component: SinglePost,
         }

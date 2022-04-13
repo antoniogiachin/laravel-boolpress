@@ -8,9 +8,10 @@
                 <router-link :to="{name: 'home'}" class="nav-link" href="#">Home</router-link>
                 <router-link :to="{name: 'about'}" class="nav-link" href="#">Chi Siamo</router-link>
                 <router-link :to="{name: 'contact'}" class="nav-link" href="#">Contatti</router-link>
-                <router-link :to="{name: 'posts'}" class="nav-link" href="#">Visualizza i Post</router-link>
+                <router-link :to="{name: 'blog'}" class="nav-link" href="#">Visualizza i Post</router-link>
+                <a href="/admin" class="nav-link"><u>Area Amministrativa</u></a>
             </div>
-            
+
         </div>
     </nav>
 </template>

@@ -7,7 +7,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ post.title }}</h5>
                         <p class="card-text">{{ post.content.slice(0,10) }} ...</p>
-                        <router-link :to="{name: 'single-post', params: {slug: post.slug}}" class="btn btn-primary">Continua la lettura</router-link>
+                        <a href="#" class="btn btn-primary">Continua la lettura</a>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-    name: 'Posts',
+    name: 'myMain',
     //data
     data (){
         return {
