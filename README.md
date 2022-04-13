@@ -140,3 +140,4 @@ La relazione è di uno (categoies) a molti (posts). La tabella dipendente è dun
 ## Gestione categorie post consigliati
 - dentro singlePost bisogna lavorare
 - va gestito il post uguale, altrimenti tra i consigliati mi mostra il post visualizzato
+- quando la pagina è già renderizzata come nel caso dei post collegati la path viene cambiata ma non il contenuto della router view, ho aggiunto :key="$route.fullPath" alla router-view che fa in modo di renderizzare al cambio di url

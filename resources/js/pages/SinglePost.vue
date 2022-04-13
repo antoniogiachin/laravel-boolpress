@@ -10,9 +10,9 @@
         <h2 class="my-2">Post collegati</h2>
         <div class="row row-cols-4">
             <div class="col card ms_card" v-for="relatedPost in relatedPostsFiltered" :key="relatedPost.id">
-                <h3 class="card-title">{{relatedPost.title}}</h3>
+                <h3 class="card-title">{{sliceContent(relatedPost.title,20)}}</h3>
                 <p> Anteprima: {{sliceContent(relatedPost.content, 10)}}</p>
-                <a class="btn btn-success" href="">Vai al post</a>
+                <router-link  :to="{name: 'single-post', params: {slug: relatedPost.slug}}" class="btn btn-success">Vai al post</router-link>
             </div>
         </div>
         <p>Tags</p>
@@ -66,7 +66,11 @@ export default {
         },
         // trim stringa
         sliceContent(text, param){
-            return text.slice(0,param) + "...";
+            if(text.length > param){
+                return text.slice(0,param) + "...";
+            } else {
+                return text;
+            }
         }
     },
     created() {

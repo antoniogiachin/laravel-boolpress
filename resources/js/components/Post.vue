@@ -1,7 +1,7 @@
 <template>
     <div class="card mb-3">
         <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
+            <h5 class="card-title">{{ sliceContent(post.title,20) }}</h5>
             <p class="card-text">{{ sliceContent(post.content, 10) }}</p>
             <!-- mostro i tags -->
             <div class="d-flex mb-3">
@@ -31,7 +31,11 @@ export default {
     },
     methods:{
         sliceContent(text, param){
-            return text.slice(0,param) + "...";
+            if(text.length > param){
+                return text.slice(0,param) + "...";
+            } else {
+                return text;
+            }
         }
     },
     computed:{

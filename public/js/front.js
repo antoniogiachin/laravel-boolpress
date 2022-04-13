@@ -2043,7 +2043,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     sliceContent: function sliceContent(text, param) {
-      return text.slice(0, param) + "...";
+      if (text.length > param) {
+        return text.slice(0, param) + "...";
+      } else {
+        return text;
+      }
     }
   },
   computed: {
@@ -2279,7 +2283,11 @@ __webpack_require__.r(__webpack_exports__);
     },
     // trim stringa
     sliceContent: function sliceContent(text, param) {
-      return text.slice(0, param) + "...";
+      if (text.length > param) {
+        return text.slice(0, param) + "...";
+      } else {
+        return text;
+      }
     }
   },
   created: function created() {
@@ -3574,7 +3582,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("router-view")
+  return _c("router-view", { key: _vm.$route.fullPath })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -3604,7 +3612,7 @@ var render = function () {
       { staticClass: "card-body" },
       [
         _c("h5", { staticClass: "card-title" }, [
-          _vm._v(_vm._s(_vm.post.title)),
+          _vm._v(_vm._s(_vm.sliceContent(_vm.post.title, 20))),
         ]),
         _vm._v(" "),
         _c("p", { staticClass: "card-text" }, [
@@ -3874,7 +3882,7 @@ var render = function () {
           { key: relatedPost.id, staticClass: "col card ms_card" },
           [
             _c("h3", { staticClass: "card-title" }, [
-              _vm._v(_vm._s(relatedPost.title)),
+              _vm._v(_vm._s(_vm.sliceContent(relatedPost.title, 20))),
             ]),
             _vm._v(" "),
             _c("p", [
@@ -3884,10 +3892,21 @@ var render = function () {
               ),
             ]),
             _vm._v(" "),
-            _c("a", { staticClass: "btn btn-success", attrs: { href: "" } }, [
-              _vm._v("Vai al post"),
-            ]),
-          ]
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-success",
+                attrs: {
+                  to: {
+                    name: "single-post",
+                    params: { slug: relatedPost.slug },
+                  },
+                },
+              },
+              [_vm._v("Vai al post")]
+            ),
+          ],
+          1
         )
       }),
       0
