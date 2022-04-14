@@ -1,6 +1,8 @@
 <template>
     <div class="card mb-3">
         <div class="card-body">
+            <!-- immagine -->
+            <img :src="post.cover" class="card-img-top mb-2 ms_card-img img-fluid" :alt="post.title">
             <h5 class="card-title">{{ sliceContent(post.title,20) }}</h5>
             <p class="card-text">{{ sliceContent(post.content, 10) }}</p>
             <!-- mostro i tags -->
@@ -51,5 +53,7 @@ export default {
 </script>
 
 <style>
-
+.ms_card-img{
+    height: 150px;
+}
 </style>

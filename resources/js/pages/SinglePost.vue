@@ -2,6 +2,8 @@
     <div class="container">
         <!-- <h1> Lo slug del post è: {{ $route.params.slug }}</h1> -->
         <h1><em>Titolo:</em> {{post.title}}</h1>
+        <!-- immagine -->
+        <img :src="post.cover" :alt="post.title" class="img-fluid w-25">
         <p><strong class="fs-4">Contenuto: </strong> {{post.content}}</p>
         <p>Cateogrie</p>
         <ul>

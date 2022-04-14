@@ -21,6 +21,15 @@ class PostController extends Controller
         // questo non stamperebbe le categorie, ma solamente l'id di categoty, per risolvere
         $posts = Post::with(['category', 'tags'])->paginate(4);
 
+        // prelevati i posts dentro una collectione con each li ciclo epr vedere se hanno immagine e nel caso con url li passo con chiamata api altrimenti passo immagine di placeholder
+        $posts->each(function($post){
+            if($post->cover){
+                $post->cover = url('storage/' . $post->cover);
+            } else {
+                $post->cover = url('img/placeholder.png');
+            }
+        });
+
 
         //ritorno un json
         return response()->json(
@@ -36,6 +45,13 @@ class PostController extends Controller
 
         //singolo post
         $post = Post::where('slug', $slug)->with(['category', 'tags'])->first();
+
+        //gestione immagine
+        if ($post->cover) {
+            $post->cover = url('storage/' . $post->cover);
+        } else {
+            $post->cover = url('img/placeholder.png');
+        }
         // se il post esiste lo passo come json, altrimenti il json sarà un errore di risposta
         if($post){
             return response()->json([
