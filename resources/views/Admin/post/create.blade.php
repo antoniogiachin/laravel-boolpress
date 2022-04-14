@@ -4,11 +4,12 @@
     <div class="container px-5">
         <h1 class="mb-3">Inserisci un nuovo post</h1>
         {{-- metodo POST e azione sullo store --}}
-        <form method="POST" action="{{ route('admin.posts.store') }}">
-    
+        {{-- aggiungo per upload dei dati enctype --}}
+        <form method="POST" action="{{ route('admin.posts.store') }}" enctype="multipart/form-data">
+
             {{-- token sicurezza --}}
             @csrf
-    
+
             {{-- titolo --}}
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
@@ -46,7 +47,12 @@
                     </label>
                 </div>
             @endforeach
-            
+
+            {{-- upload immagine --}}
+            <div class="my-4">
+                <label for="image" class="h4 form-label">Carica immagine del post</label>
+                <input class="form-control" type="file" id="image" name="image">
+            </div>
             {{-- bottone submit --}}
             <button type="submit" class="btn btn-primary">Salva</button>
         </form>

@@ -142,3 +142,18 @@ La relazione è di uno (categoies) a molti (posts). La tabella dipendente è dun
 - va gestito il post uguale, altrimenti tra i consigliati mi mostra il post visualizzato
 - quando la pagina è già renderizzata come nel caso dei post collegati la path viene cambiata ma non il contenuto della router view, ho aggiunto :key="$route.fullPath" alla router-view che fa in modo di renderizzare al cambio di url (https://stackoverflow.com/questions/65064006/router-view-will-not-update-when-when-clicking-on-router-link-embedded-within-vi)
 - Aggiunta pagina 404 se incrocio rotta catch all
+:key="$route.fullPath"
+
+
+# 14 Aprile - Caricamento file immagine e gestione
+- Nel filesystems.php viene di default inserito il valore 'local' ossia i file caricati sono salvati nella cartella storage, nel nostro caso vogliamo che siano salvati dentro la cartella public, cambio il valore in public
+- Creo un symlink di storage/app/public all'interno della cartella public di accesso pubblico *php artisan storage:link*
+- Aggiuingo alla tabella posts una colonna che salvi la path della immagine -> con migrate seguita da --table=posts -> nella migrate definisco un $table->string('cover')->nullable()->after('dopo la colonna che voglio')
+- Lato views (create.blade.php) devo aggiungere al form *enctype="multipart/form-data"* questo permette 'l'upload' del file -> poi aggiungo un input di tipo file al campo name posso mettere quello che preferisco, nel db infatti verrà passata una path e non quel name li che invece sarà gestito dal solo controller
+- Nel model di Post imposto nei fillable anche il campo cover
+- Lato PostController gestisco lo store, prima validazione immagine, poi salvataggio tramite metodo **Storage::put** a questo tra parentesi primo parametro-> specifico sotto cartella, secondo parametro-> l'immagine recupareta dalla request all e salvata in $data
+- A questo punto la immagine è salvata in storage/app/public/uploads e nel symlink presente in public, mi ci posso riferire come facevo con asset, facciamolo nella view show
+- Gestisco edit e update, nel caso della edit potrei voler mostrare l'immagine precedente e sotto input per inserimento nuova immagine. Nel controller per update solo se immagine nuova c'è cancello la precedente con **Storage::delete**
+- Per eliminazione, prima elimino la immagine e poi il post, sempre in controller sotto destroy -> avevo dimenticato on delete cascade su le foreign key messe dentro la tabella pivot, questo impediva cancellazione, problema corretto
+
+## Passaggio informazioni al Front-end per immagine

@@ -8,6 +8,7 @@ use App\Post;
 use App\Tag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 //per usare funzione per lo slug
 use Illuminate\Support\Str;
 
@@ -62,6 +63,8 @@ class PostController extends Controller
                 "category_id"=>'nullable|exists:categories,id',
                 // array ricevuto deve contenere valori nullable e presenti nella tabella tags alla colonna id
                 "tagsId" => 'nullable|exists:tags,id',
+                // validazione immagine nullable, di tipo immagine, e di dimensioni massime di 4mb, in kilobyte binary(con multipli di 24)
+                'image' => 'nullable|image|max:4096'
             ]
 
         );
@@ -86,6 +89,14 @@ class PostController extends Controller
 
         // inserisco lo slug dentro data
         $data['slug'] = $slug;
+
+        // le operazioni sulla immagine solo se presente
+        if(isset($data['image'])){
+            // storage della immagine in una path
+            $imagePath = Storage::put('uploads', $data['image']);
+            // il cover del db sarà dunque imagePath
+            $data['cover'] = $imagePath;
+        }
 
         //fill su post
         $post->fill($data);
@@ -153,6 +164,7 @@ class PostController extends Controller
                 "content"=> 'required|min:10',
                 "category_id"=>'nullable|exists:categories,id',
                 "tagsId" => 'nullable|exists:tags,id',
+                "image" => 'nullable|image|max:4096'
             ]
         );
         //salvo in data il contenuto form
@@ -169,6 +181,18 @@ class PostController extends Controller
                 $counter++;
             };
             $data['slug']=$slug;
+        }
+
+        //se nuova immagine è stata inserita e quindi presente in $data
+        if(isset($data['image'])){
+            // se presente immagine precedente la cancello
+            if($post->cover){
+                Storage::delete($post->cover);
+            }
+
+            // poi procedo allo store della nuova immagine
+            $imagePath = Storage::put('uploads', $data['image']);
+            $data['cover']= $imagePath;
         }
 
         $post->fill($data);
@@ -190,6 +214,11 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        //elimino immagine se presente
+        if($post->cover){
+            Storage::delete($post->cover);
+        }
+
         $post->delete();
 
         return redirect()->route('admin.posts.index')->with('delete', 'Eliminazione avvenuta con successo!');

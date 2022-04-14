@@ -73,9 +73,14 @@ export default {
             }
         }
     },
-    created() {
+    mounted() {
         this.getSinglePost(this.$route.params.slug);
     },
+    //vedi watchers https://v3.router.vuejs.org/guide/advanced/navigation-guards.html#in-component-guards
+    // beforeRouteUpdate(to, from, next){
+    //     this.$route.params = to.relatedPost.slug
+    //     next()
+    // },
     computed:{
         relatedPostsFiltered : function(){
             return this.relatedPosts.filter(relatedPost =>{

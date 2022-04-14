@@ -11,13 +11,14 @@
             <h4>Tags</h4>
             @foreach ($post->tags as $tag)
                 <li>
-                    <span class="badge rounded-pill bg-primary">{{ $tag->name }}</span>    
+                    <span class="badge rounded-pill bg-primary">{{ $tag->name }}</span>
                 </li>
             @endforeach
         </ul>
+        <div><img src="{{ asset('storage/' . $post->cover) }}" class="img-fluid w-25" alt="{{ $post->name }}"></div>
         <div class="d-flex justify-content-center">
             <a class="btn btn-primary" href="{{ route('admin.posts.index') }}">Torna ai Post</a>
         </div>
     </div>
 
-@endsection 
+@endsection
