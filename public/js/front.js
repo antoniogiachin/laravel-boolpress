@@ -2181,8 +2181,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Contact'
+  name: 'Contact',
+  data: function data() {
+    return {
+      // v-model su
+      name: '',
+      email: '',
+      message: ''
+    };
+  }
 });
 
 /***/ }),
@@ -3968,20 +3999,114 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("h1", { staticClass: "text-center" }, [_vm._v("Contattaci")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-4 offset-4" }, [
+        _c(
+          "form",
+          {
+            on: {
+              submit: function ($event) {
+                $event.preventDefault()
+                return _vm.submitForm.apply(null, arguments)
+              },
+            },
+          },
+          [
+            _c("div", { staticClass: "mb-3" }, [
+              _c(
+                "label",
+                { staticClass: "form-label", attrs: { for: "name" } },
+                [_vm._v("Nome")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.name,
+                    expression: "name",
+                  },
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text", id: "name", name: "name" },
+                domProps: { value: _vm.name },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.name = $event.target.value
+                  },
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-3" }, [
+              _c(
+                "label",
+                { staticClass: "form-label", attrs: { for: "email" } },
+                [_vm._v("Email")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.email,
+                    expression: "email",
+                  },
+                ],
+                staticClass: "form-control",
+                attrs: { type: "email", id: "email", name: "email" },
+                domProps: { value: _vm.email },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.email = $event.target.value
+                  },
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _vm._m(0),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+          [_vm._v("Invia")]
+        ),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("Contattaci")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "\n        Fugiat nostrud irure proident anim do aliqua cillum amet excepteur est fugiat ea eu. Cupidatat mollit tempor non ea duis veniam culpa. Incididunt labore veniam ad veniam non elit incididunt sit minim. Elit officia laborum aliquip do veniam esse sunt consequat tempor laboris sunt tempor duis aliqua aute. Nulla nostrud aute et cillum adipisicing incididunt incididunt dolor irure velit fugiat excepteur pariatur esse elit. Commodo proident reprehenderit adipisicing occaecat fugiat aute labore. Anim nulla nisi ut velit adipisicing aliquip. Labore velit fugiat deserunt nulla excepteur eiusmod dolore mollit sunt sint. Deserunt dolore dolor ut proident do veniam in do non duis minim do. Duis et do dolor Lorem do deserunt amet.\n    "
-        ),
+    return _c("div", { staticClass: "mb-3" }, [
+      _c("div", { staticClass: "form-floating" }, [
+        _c("textarea", {
+          staticClass: "form-control",
+          staticStyle: { "min-height": "250px" },
+          attrs: {
+            placeholder: "Motivo del contatto",
+            id: "message",
+            name: "message",
+            rows: "50",
+          },
+        }),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "message" } }, [_vm._v("Messaggio")]),
       ]),
     ])
   },

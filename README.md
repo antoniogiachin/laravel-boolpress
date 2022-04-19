@@ -159,3 +159,7 @@ La relazione è di uno (categoies) a molti (posts). La tabella dipendente è dun
 ## Passaggio informazioni al Front-end per immagine
 - Se vediamo ispettore con vue nel caso di amatriciana e mimosa essendo presente una immagine la path relativa a cover è **"uploads/yJfURSxoXSBX7LmcJEAx9EWOYeNSy393SsJ1R0ay.jpg"**, come riferirci correttamente a questa nel front per stamparla? Non possiamo, dobbiamo quindi tornare nel controller post delle api e fare in modo di trasformare questa path usando la funzione url('path'). Cicliamo i posts da inviare (usiamo un metodo relativo ad una collection [ricordiamo che le quary di laravel restituisocno collection tranne nel caso di first() e queste hanno dei metodi particolari] ossia each, che funziona di fatti come una foreach di javascript) e se per ciascun post è presente una cover allora ne trasformiamo la path con url in modo che sia leggibile dal front-end, altrimenti passiamo una immagine fittizia che funge da placeholder. La immagine di placeholder la metto nella cartella public/img(cartella img fatta da me)
 - modifico il component post.vue e visualizzo la immagine nella card, stessa cosa in singlepost
+
+# 19 Aprile - gestione invio email per compilazione form contatti
+- back-end: creazione migration e model contact *php artisan make:model Lead -m*, i contatti ricevuti si chiamano per convenzione leads, il contattante Lead. Nella tabella inserisco nome, email, messaggio del lead
+- nel front in Contact.vue stilizzo un form per invio contatto
