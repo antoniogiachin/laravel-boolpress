@@ -1,6 +1,9 @@
 window.Vue = require('vue');
 window.axios = require('axios');
-          
+// gestisce csrf in front
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+
 // importo il componente vue
 import Vue from 'vue';
 import App from './components/App';
