@@ -19918,7 +19918,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.vue");
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"); // importo il componente vue
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"); // gestisce csrf in front
+
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'; // importo il componente vue
 
 
  //importo file di router.js

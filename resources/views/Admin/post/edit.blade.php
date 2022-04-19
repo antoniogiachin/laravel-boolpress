@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mb-3">Modifica {{ $post->title }}</h1>
+        <h1 class="my-3">Modifica {{ $post->title }}</h1>
         {{-- metodo POST e azione sullo store --}}
         <form method="POST" action="{{ route('admin.posts.update', $post->id) }}" enctype="multipart/form-data">
 
@@ -21,7 +21,7 @@
             {{-- contenuto --}}
             <div class="mb-3">
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="Inserisci il post qui" id="content" name="content" cols="50" rows="10">{{ old('content', $post->content) }}</textarea>
+                    <textarea class="form-control" style="min-height: 250px" placeholder="Inserisci il post qui" id="content" name="content" rows="50">{{ old('content', $post->content) }}</textarea>
                     <label for="content">Post</label>
                 </div>
             </div>

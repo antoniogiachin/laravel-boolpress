@@ -10,7 +10,7 @@
     @endif
 
     <div class="container">
-        <h1 class="text-center mb-5">Tabella dei post </h1>
+        <h1 class="text-center my-5">Tabella dei post </h1>
 
         <a href="{{ route('admin.posts.create') }}" class="btn btn-primary mb-2">Aggiungi nuovo post</a>
 
@@ -42,7 +42,7 @@
                     <td>{{  ($post->category) ? $post->category->name : 'Nessuna categoria definita!' }}</td>
                     <td>
                       @foreach ($post->tags as $tag)
-                        <span class="badge rounded-pill bg-primary">{{ $tag->name }}</span>  
+                        <span class="badge rounded-pill bg-primary">{{ $tag->name }}</span>
                       @endforeach
                     </td>
                     <td class="d-flex gap-1">
@@ -52,20 +52,20 @@
                       <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning">Modifica</a>
                       {{-- destroy --}}
                       <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
-                        
+
                         {{-- token sicurezza --}}
                         @csrf
 
                         {{-- metodo delete --}}
                         @method('DELETE')
 
-                        <button class="btn btn-danger">Elimina</button>
-                      
+                        <button class="btn btn-danger delete">Elimina</button>
+
                       </form>
 
                     </td>
                 </tr>
-              @endforeach  
+              @endforeach
             </tbody>
         </table>
     </div>

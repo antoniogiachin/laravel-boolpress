@@ -1,6 +1,12 @@
 @extends('admin.layouts.base')
 
 @section('content')
+    {{-- Modifica avvenuta con successo --}}
+    @if (session('create'))
+      <div class="alert alert-success">
+        {{ session('create') }}
+      </div>
+    @endif
     <div class="container">
         <h1 class="text-center">Ecco il post: {{ $post->title }}</h1>
         <p> <strong>Categoria: </strong>{{ ($post->category) ? $post->category->name : 'Nessuna categoria definita!'}} </p>

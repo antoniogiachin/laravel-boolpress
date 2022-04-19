@@ -109,7 +109,7 @@ class PostController extends Controller
 
 
         //decido il redirect
-        return redirect()->route('admin.posts.show', $post->id);
+        return redirect()->route('admin.posts.show', $post->id)->with('create', 'Post creato con successo! ');
 
     }
 
@@ -203,7 +203,7 @@ class PostController extends Controller
             $post->tags()->sync($data['tagsId']);
         }
 
-        return redirect()-> route('admin.posts.show', $post->id);
+        return redirect()-> route('admin.posts.show', $post->id)->with('create', 'Post modificato con successo!');
     }
 
     /**

@@ -41125,7 +41125,17 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //funzione per verifica eliminazione
+
+
+var deleteConfirm = document.querySelectorAll('.delete');
+deleteConfirm.forEach(function (button) {
+  button.addEventListener('click', function (e) {
+    if (!confirm('Vuoi davvero eliminare il post?')) {
+      e.preventDefault();
+    }
+  });
+});
 
 /***/ }),
 

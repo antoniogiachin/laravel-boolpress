@@ -80,7 +80,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="pb-4">
             {{-- errori validazioni --}}
             @if ($errors->any())
                 <div class="alert alert-danger">
