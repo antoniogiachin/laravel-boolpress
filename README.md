@@ -171,3 +171,7 @@ La relazione è di uno (categoies) a molti (posts). La tabella dipendente è dun
 ## Front-end
 - nel front in Contact.vue stilizzo un form per invio contatto, metto i v-model sui tre campi (name,email,message)
 - imposto chiamata axios di tipo post
+- gestisco visualizzazione errori nel form lato utente, in bootstrap div con class invalid-feedback mostra a schermo messaggio di errore se input del form ha classe is-invalid
+- Gestisco comparsa di messaggio riuscita invio email
+- In caso di successo reset dei campi
+- gestione pulsante con scritta invio in corso

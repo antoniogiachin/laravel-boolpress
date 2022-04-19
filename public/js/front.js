@@ -2168,67 +2168,9 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Contact.vue?vue&type=script&lang=js& ***!
   \*************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Contact',
-  data: function data() {
-    return {
-      // v-model su
-      name: '',
-      email: '',
-      message: ''
-    };
-  },
-  methods: {
-    sendForm: function sendForm() {
-      // chiamata in cui devo passare anche i parametri salvati in v-model, verranno ricevuti dalla request e salvati secondo logiche controller ContactController@show
-      axios.post('/api/contacts', // parametri json
-      {
-        'name': this.name,
-        'email': this.email,
-        'message': this.message
-      }).then(function (response) {
-        console.log(response); //se response true
-        //se response false
-      });
-    }
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/resources/js/pages/Contact.vue: Unexpected token (90:16)\n\n\u001b[0m \u001b[90m 88 |\u001b[39m                     \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmessage \u001b[33m=\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 89 |\u001b[39m                     \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39merrors \u001b[33m=\u001b[39m []\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 90 |\u001b[39m                 }\u001b[36melse\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 91 |\u001b[39m                     \u001b[90m//se response false\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 92 |\u001b[39m                     \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39merrors \u001b[33m=\u001b[39m response\u001b[33m.\u001b[39mdata\u001b[33m.\u001b[39merrors\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 93 |\u001b[39m                     \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msuccess \u001b[33m=\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n    at instantiate (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:72:32)\n    at constructor (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:358:12)\n    at Parser.raise (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:3334:19)\n    at Parser.unexpected (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:3372:16)\n    at Parser.parseExprAtom (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:13014:22)\n    at Parser.parseExprSubscripts (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12539:23)\n    at Parser.parseUpdate (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12518:21)\n    at Parser.parseMaybeUnary (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12489:23)\n    at Parser.parseMaybeUnaryOrPrivate (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12283:61)\n    at Parser.parseExprOps (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12290:23)\n    at Parser.parseMaybeConditional (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12260:23)\n    at Parser.parseMaybeAssign (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12213:21)\n    at Parser.parseExpressionBase (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12156:36)\n    at /Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12143:39\n    at Parser.allowInAnd (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14231:16)\n    at Parser.parseExpression (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12143:17)\n    at Parser.parseStatementContent (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14671:23)\n    at Parser.parseStatement (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14528:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:15167:25)\n    at Parser.parseBlockBody (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:15158:10)\n    at Parser.parseBlock (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:15142:10)\n    at Parser.parseStatementContent (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14612:21)\n    at Parser.parseStatement (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14528:17)\n    at Parser.parseIfStatement (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14922:28)\n    at Parser.parseStatementContent (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14579:21)\n    at Parser.parseStatement (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14528:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:15167:25)\n    at Parser.parseBlockBody (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:15158:10)\n    at Parser.parseBlock (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:15142:10)\n    at Parser.parseFunctionBody (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:13836:24)\n    at Parser.parseArrowExpression (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:13808:10)\n    at Parser.parseExprAtom (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:13009:25)\n    at Parser.parseExprSubscripts (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12539:23)\n    at Parser.parseUpdate (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12518:21)\n    at Parser.parseMaybeUnary (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12489:23)\n    at Parser.parseMaybeUnaryOrPrivate (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12283:61)");
 
 /***/ }),
 
@@ -4016,6 +3958,8 @@ var render = function () {
   return _c("div", { staticClass: "container" }, [
     _c("h1", { staticClass: "text-center" }, [_vm._v("Contattaci")]),
     _vm._v(" "),
+    _vm.success ? _c("div", { staticClass: "row" }, [_vm._m(0)]) : _vm._e(),
+    _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-4 offset-4" }, [
         _c(
@@ -4029,106 +3973,175 @@ var render = function () {
             },
           },
           [
-            _c("div", { staticClass: "mb-3" }, [
-              _c(
-                "label",
-                { staticClass: "form-label", attrs: { for: "name" } },
-                [_vm._v("Nome")]
-              ),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.name,
-                    expression: "name",
-                  },
-                ],
-                staticClass: "form-control",
-                attrs: { type: "text", id: "name", name: "name" },
-                domProps: { value: _vm.name },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.name = $event.target.value
-                  },
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-3" }, [
-              _c(
-                "label",
-                { staticClass: "form-label", attrs: { for: "email" } },
-                [_vm._v("Email")]
-              ),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.email,
-                    expression: "email",
-                  },
-                ],
-                staticClass: "form-control",
-                attrs: { type: "email", id: "email", name: "email" },
-                domProps: { value: _vm.email },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.email = $event.target.value
-                  },
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-3" }, [
-              _c("div", { staticClass: "form-floating" }, [
-                _c("textarea", {
+            _c(
+              "div",
+              { staticClass: "mb-3" },
+              [
+                _c(
+                  "label",
+                  { staticClass: "form-label", attrs: { for: "name" } },
+                  [_vm._v("Nome")]
+                ),
+                _vm._v(" "),
+                _c("input", {
                   directives: [
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.message,
-                      expression: "message",
+                      value: _vm.name,
+                      expression: "name",
                     },
                   ],
                   staticClass: "form-control",
-                  staticStyle: { "min-height": "250px" },
-                  attrs: {
-                    placeholder: "Motivo del contatto",
-                    id: "message",
-                    name: "message",
-                    rows: "50",
-                  },
-                  domProps: { value: _vm.message },
+                  class: _vm.errors.name ? "is-invalid" : "",
+                  attrs: { type: "text", id: "name", name: "name" },
+                  domProps: { value: _vm.name },
                   on: {
                     input: function ($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.message = $event.target.value
+                      _vm.name = $event.target.value
                     },
                   },
                 }),
                 _vm._v(" "),
-                _c("label", { attrs: { for: "message" } }, [
-                  _vm._v("Messaggio"),
-                ]),
-              ]),
+                _vm._l(_vm.errors.name, function (error, index) {
+                  return _c(
+                    "div",
+                    {
+                      key: "name_error_" + index,
+                      staticClass: "invalid-feedback",
+                    },
+                    [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(error) +
+                          "\n                    "
+                      ),
+                    ]
+                  )
+                }),
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "mb-3" },
+              [
+                _c(
+                  "label",
+                  { staticClass: "form-label", attrs: { for: "email" } },
+                  [_vm._v("Email")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.email,
+                      expression: "email",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  class: { "is-invalid": _vm.errors.email },
+                  attrs: { type: "email", id: "email", name: "email" },
+                  domProps: { value: _vm.email },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.email = $event.target.value
+                    },
+                  },
+                }),
+                _vm._v(" "),
+                _vm._l(_vm.errors.email, function (error, index) {
+                  return _c(
+                    "div",
+                    {
+                      key: "name_error_" + index,
+                      staticClass: "invalid-feedback",
+                    },
+                    [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(error) +
+                          "\n                    "
+                      ),
+                    ]
+                  )
+                }),
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-3" }, [
+              _c(
+                "div",
+                { staticClass: "form-floating" },
+                [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.message,
+                        expression: "message",
+                      },
+                    ],
+                    staticClass: "form-control",
+                    class: _vm.errors.message ? "is-invalid" : "",
+                    staticStyle: { "min-height": "250px" },
+                    attrs: {
+                      placeholder: "Motivo del contatto",
+                      id: "message",
+                      name: "message",
+                      rows: "50",
+                    },
+                    domProps: { value: _vm.message },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.message = $event.target.value
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "message" } }, [
+                    _vm._v("Messaggio"),
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.errors.message, function (error, index) {
+                    return _c(
+                      "div",
+                      {
+                        key: "name_error_" + index,
+                        staticClass: "invalid-feedback",
+                      },
+                      [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(error) +
+                            "\n                        "
+                        ),
+                      ]
+                    )
+                  }),
+                ],
+                2
+              ),
             ]),
             _vm._v(" "),
             _c(
               "button",
               { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [_vm._v("Invia")]
+              [_vm._v(_vm._s(_vm.sending ? "Invio in corso..." : "Invia"))]
             ),
           ]
         ),
@@ -4136,7 +4149,24 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "col-6 offset-3 text-center bg-success rounded mb-5 mt-2",
+      },
+      [
+        _c("h4", { staticClass: "px-1 py-4" }, [
+          _vm._v("Messaggio inviato con successo!"),
+        ]),
+      ]
+    )
+  },
+]
 render._withStripped = true
 
 
