@@ -2168,9 +2168,108 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Contact.vue?vue&type=script&lang=js& ***!
   \*************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/resources/js/pages/Contact.vue: Unexpected token (90:16)\n\n\u001b[0m \u001b[90m 88 |\u001b[39m                     \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmessage \u001b[33m=\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 89 |\u001b[39m                     \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39merrors \u001b[33m=\u001b[39m []\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 90 |\u001b[39m                 }\u001b[36melse\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 91 |\u001b[39m                     \u001b[90m//se response false\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 92 |\u001b[39m                     \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39merrors \u001b[33m=\u001b[39m response\u001b[33m.\u001b[39mdata\u001b[33m.\u001b[39merrors\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 93 |\u001b[39m                     \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msuccess \u001b[33m=\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n    at instantiate (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:72:32)\n    at constructor (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:358:12)\n    at Parser.raise (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:3334:19)\n    at Parser.unexpected (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:3372:16)\n    at Parser.parseExprAtom (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:13014:22)\n    at Parser.parseExprSubscripts (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12539:23)\n    at Parser.parseUpdate (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12518:21)\n    at Parser.parseMaybeUnary (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12489:23)\n    at Parser.parseMaybeUnaryOrPrivate (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12283:61)\n    at Parser.parseExprOps (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12290:23)\n    at Parser.parseMaybeConditional (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12260:23)\n    at Parser.parseMaybeAssign (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12213:21)\n    at Parser.parseExpressionBase (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12156:36)\n    at /Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12143:39\n    at Parser.allowInAnd (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14231:16)\n    at Parser.parseExpression (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12143:17)\n    at Parser.parseStatementContent (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14671:23)\n    at Parser.parseStatement (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14528:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:15167:25)\n    at Parser.parseBlockBody (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:15158:10)\n    at Parser.parseBlock (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:15142:10)\n    at Parser.parseStatementContent (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14612:21)\n    at Parser.parseStatement (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14528:17)\n    at Parser.parseIfStatement (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14922:28)\n    at Parser.parseStatementContent (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14579:21)\n    at Parser.parseStatement (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:14528:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:15167:25)\n    at Parser.parseBlockBody (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:15158:10)\n    at Parser.parseBlock (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:15142:10)\n    at Parser.parseFunctionBody (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:13836:24)\n    at Parser.parseArrowExpression (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:13808:10)\n    at Parser.parseExprAtom (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:13009:25)\n    at Parser.parseExprSubscripts (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12539:23)\n    at Parser.parseUpdate (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12518:21)\n    at Parser.parseMaybeUnary (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12489:23)\n    at Parser.parseMaybeUnaryOrPrivate (/Users/antoniogiachin/Desktop/WebDev/laravel-boolpress/node_modules/@babel/parser/lib/index.js:12283:61)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'Contact',
+  data: function data() {
+    return {
+      // v-model su
+      name: '',
+      email: '',
+      message: '',
+      // salvo errors
+      errors: [],
+      // mostra messaggio successo
+      success: false,
+      // invio in corso
+      sending: false // andrà su true al momento della chiamata, torna su false ricevuta la risposta
+
+    };
+  },
+  methods: {
+    sendForm: function sendForm() {
+      var _this = this;
+
+      //visualizzo ...invio in corso
+      this.sending = true, // chiamata in cui devo passare anche i parametri salvati in v-model, verranno ricevuti dalla request e salvati secondo logiche controller ContactController@show
+      axios.post('/api/contacts', // parametri json
+      {
+        'name': this.name,
+        'email': this.email,
+        'message': this.message
+      }).then(function (response) {
+        console.log(response); // smetto ..invio in corso
+
+        _this.sending = false; //se response true
+
+        if (response.data.success) {
+          _this.success = true;
+          _this.name = '';
+          _this.email = '';
+          _this.message = '';
+          _this.errors = [];
+        } else {
+          //se response false
+          _this.errors = response.data.errors;
+          _this.success = false;
+          console.log(_this.errors);
+        }
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -20263,14 +20362,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************!*\
   !*** ./resources/js/pages/Contact.vue ***!
   \****************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Contact_vue_vue_type_template_id_01b3a6b2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Contact.vue?vue&type=template&id=01b3a6b2& */ "./resources/js/pages/Contact.vue?vue&type=template&id=01b3a6b2&");
 /* harmony import */ var _Contact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Contact.vue?vue&type=script&lang=js& */ "./resources/js/pages/Contact.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Contact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Contact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -20300,7 +20400,7 @@ component.options.__file = "resources/js/pages/Contact.vue"
 /*!*****************************************************************!*\
   !*** ./resources/js/pages/Contact.vue?vue&type=script&lang=js& ***!
   \*****************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -82,15 +82,15 @@ export default {
                 this.sending = false;
                 //se response true
                 if(response.data.success){
-                    this.success =  true,
-                    this.name = '',
-                    this.email = '',
-                    this.message = '',
-                    this.errors = [],
-                }else{
+                    this.success =  true;
+                    this.name = '';
+                    this.email = '';
+                    this.message = '';
+                    this.errors = [];
+                } else {
                     //se response false
                     this.errors = response.data.errors;
-                    this.success = false,
+                    this.success = false;
                     console.log(this.errors);
                 }
             })
