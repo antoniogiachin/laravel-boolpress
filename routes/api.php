@@ -27,3 +27,6 @@ Route::get('/posts/{slug}', 'Api\PostController@show');
 
 //rotta per chiamata post legati a categoria
 Route::get('/category/{id}', 'Api\CategoryController@show');
+
+// rotta post per contact
+Route::post('/contacts', 'Api\ContactController@store');

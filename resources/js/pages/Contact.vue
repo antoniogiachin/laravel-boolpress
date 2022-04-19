@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-4 offset-4">
                 <!-- al submit prevengo il reload della pagina, e invoco metodo per chiamata POST axios -->
-                <form @submit.prevent="submitForm">
+                <form @submit.prevent="sendForm">
                     <!-- name -->
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome</label>
@@ -18,13 +18,13 @@
                     <!-- message -->
                     <div class="mb-3">
                         <div class="form-floating">
-                            <textarea class="form-control" style="min-height: 250px" placeholder="Motivo del contatto" id="message" name="message" rows="50"></textarea>
+                            <textarea v-model="message" class="form-control" style="min-height: 250px" placeholder="Motivo del contatto" id="message" name="message" rows="50"></textarea>
                             <label for="message">Messaggio</label>
                         </div>
                     </div>
+                    <!-- button submit -->
+                    <button type="submit" class="btn btn-primary">Invia</button>
                 </form>
-                <!-- button submit -->
-                <button class="btn btn-primary" type="submit">Invia</button>
             </div>
         </div>
     </div>
@@ -39,6 +39,24 @@ export default {
             name: '',
             email: '',
             message:'',
+        }
+    },
+    methods: {
+        sendForm() {
+            // chiamata in cui devo passare anche i parametri salvati in v-model, verranno ricevuti dalla request e salvati secondo logiche controller ContactController@show
+            axios.post('/api/contacts',
+            // parametri json
+                {
+                    'name' : this.name,
+                    'email' : this.email,
+                    'message' : this.message,
+                }
+            ).then(response =>{
+                console.log(response);
+                //se response true
+
+                //se response false
+            })
         }
     },
 }

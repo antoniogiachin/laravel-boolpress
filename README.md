@@ -161,5 +161,13 @@ La relazione è di uno (categoies) a molti (posts). La tabella dipendente è dun
 - modifico il component post.vue e visualizzo la immagine nella card, stessa cosa in singlepost
 
 # 19 Aprile - gestione invio email per compilazione form contatti
-- back-end: creazione migration e model contact *php artisan make:model Lead -m*, i contatti ricevuti si chiamano per convenzione leads, il contattante Lead. Nella tabella inserisco nome, email, messaggio del lead
-- nel front in Contact.vue stilizzo un form per invio contatto
+## Back-end
+- creazione migration e model contact *php artisan make:model Lead -m*, i contatti ricevuti si chiamano per convenzione leads, il contattante Lead. Nella tabella inserisco nome, email, messaggio del lead
+- setup di mailtrap -> in .env incollo dati , MAIL_FROM_ADDRESS sarà la mail che invia la comunicazione, in questo caso fittizia boolpress@info.it
+- devo creare una nuova classe oggetto di tipo Mail, *php artisan make:mail* il comando, il nome sarà *NewContact*, finisce in cartella app/mail -> vai li
+- imposto controller per chiamata post in Api/ConctactController *php artisan make:controller Api/ContactController*, salvo i dati prelevati e validati con validator nel db come nuovo Lead.
+- gestisco la rotta api post in api.php
+- per invio email: se validazione passa non solo salva il lead nel DB, ma manda la mail all'admin (vedi sintassi nel controller) e da come risposta un json di successo!
+## Front-end
+- nel front in Contact.vue stilizzo un form per invio contatto, metto i v-model sui tre campi (name,email,message)
+- imposto chiamata axios di tipo post

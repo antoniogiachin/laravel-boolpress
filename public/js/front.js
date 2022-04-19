@@ -2213,6 +2213,20 @@ __webpack_require__.r(__webpack_exports__);
       email: '',
       message: ''
     };
+  },
+  methods: {
+    sendForm: function sendForm() {
+      // chiamata in cui devo passare anche i parametri salvati in v-model, verranno ricevuti dalla request e salvati secondo logiche controller ContactController@show
+      axios.post('/api/contacts', // parametri json
+      {
+        'name': this.name,
+        'email': this.email,
+        'message': this.message
+      }).then(function (response) {
+        console.log(response); //se response true
+        //se response false
+      });
+    }
   }
 });
 
@@ -4010,7 +4024,7 @@ var render = function () {
             on: {
               submit: function ($event) {
                 $event.preventDefault()
-                return _vm.submitForm.apply(null, arguments)
+                return _vm.sendForm.apply(null, arguments)
               },
             },
           },
@@ -4075,42 +4089,54 @@ var render = function () {
               }),
             ]),
             _vm._v(" "),
-            _vm._m(0),
+            _c("div", { staticClass: "mb-3" }, [
+              _c("div", { staticClass: "form-floating" }, [
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.message,
+                      expression: "message",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  staticStyle: { "min-height": "250px" },
+                  attrs: {
+                    placeholder: "Motivo del contatto",
+                    id: "message",
+                    name: "message",
+                    rows: "50",
+                  },
+                  domProps: { value: _vm.message },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.message = $event.target.value
+                    },
+                  },
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "message" } }, [
+                  _vm._v("Messaggio"),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+              [_vm._v("Invia")]
+            ),
           ]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-          [_vm._v("Invia")]
         ),
       ]),
     ]),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-3" }, [
-      _c("div", { staticClass: "form-floating" }, [
-        _c("textarea", {
-          staticClass: "form-control",
-          staticStyle: { "min-height": "250px" },
-          attrs: {
-            placeholder: "Motivo del contatto",
-            id: "message",
-            name: "message",
-            rows: "50",
-          },
-        }),
-        _vm._v(" "),
-        _c("label", { attrs: { for: "message" } }, [_vm._v("Messaggio")]),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
